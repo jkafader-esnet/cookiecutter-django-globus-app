@@ -1,0 +1,48 @@
+{% extends "globus-portal-framework/v2/detail-base.html" %}
+
+{% load static %}
+{% load index_template %}
+
+{% block title %}Transfer List{% endblock %}
+
+{% block breadcrumb_items %}
+<li class="breadcrumb-item"><a class="h5" href="{% url 'index-selection' %}">Django Globus Portal Framework</a></li>
+<li class="breadcrumb-item active"><a class="h5">{{project_info.title}} Transfer</a></li>
+{% endblock %}
+
+{% block body %}
+
+<div class="row my-5">
+  <div class="col"></div>
+  <div class="col-10">
+      <h1>ESnet DTN Collections</h1>
+      <p class="lead font-weight-bolder">
+	Below are portals for testing data transfer rates. Most portals below are ReadOnly. 
+	Longer descriptive text could guide users towards particular collections for specific
+	things, if there's typically a collection most people will want to try first.      
+      </p>
+  </div>
+  <div class="col"></div>
+</div>
+
+{% for collection in collections %}
+<div class="row my-1">
+  <div class="col"></div>
+  <div class="col-10">
+
+    <div class="card card-body">
+    <h2 class="text-center">
+      <a href="{% url 'transfer-detail' collection.id %}">{{collection.name|default:"Globus Collection"}}</a>
+    </h2>
+      <p class="text-small text-center">{{collection.description}}</p>
+    </div>
+  </div>
+  <div class="col"></div>
+</div>
+{% empty %}
+<div class="alert alert-primary" role="alert">
+    No collections configured for this portal! Check settings to add them.
+</div>
+{% endfor %}
+
+{% endblock %}

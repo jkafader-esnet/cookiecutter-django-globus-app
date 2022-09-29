@@ -3,7 +3,8 @@ from api.urls import router
 from {{ cookiecutter.project_slug }}.views import (
     landing_page, 
     CustomSearch,
-    TransferView
+    TransferListView,
+    TransferDetailView,
 )
 
 from django.urls import path, include
@@ -19,7 +20,8 @@ urlpatterns = [
     path("", landing_page, name="landing-page"),
     
     path("<osn_index:index>", CustomSearch.as_view(), name="search"),
-    path("transfer/", TransferView.as_view(), name="transfer"),
+    path("transfer/", TransferListView.as_view(), name="transfer-list"),
+    path("transfer/<collection_id>/", TransferDetailView.as_view(), name="transfer-detail"),
     
     path("", include("globus_portal_framework.urls")),
     path("", include("social_django.urls", namespace="social")),

@@ -88,7 +88,11 @@ class EndpointSearchView(viewsets.ViewSet):
         return Response(response.json()["DATA"])
 
     @globus_authentication
-    def retrieve(self, request, pk=settings.PORTAL_ENDPOINT_ID, *args, **kwargs):
+    def retrieve(self, request, pk=None, *args, **kwargs):
+        if not pk:
+            return Response(
+                {}, 400
+            )
         endpoint_url = f"{self.TRANSFER_BASE_URL}/endpoint/{pk}"
         response = requests.get(
             endpoint_url,
@@ -104,7 +108,11 @@ class EndpointSearchView(viewsets.ViewSet):
 
     @action(detail=True)
     @globus_authentication
-    def ls(self, request, pk=settings.PORTAL_ENDPOINT_ID, *args, **kwargs):
+    def ls(self, request, pk=None, *args, **kwargs):
+        if not pk:
+            return Response(
+                {}, 400
+            )
         endpoint_url = f"{self.TRANSFER_BASE_URL}/endpoint/{pk}/ls?show_hidden=0"
         path = request.query_params.get("path", None)
         if path:
