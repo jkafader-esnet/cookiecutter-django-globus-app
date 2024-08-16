@@ -34,6 +34,7 @@ class TransferDetailView(TemplateView):
 
     def get_context_data(self, collection_id, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
+        context["collections"] = settings.COLLECTIONS
         context["collection_id"] = collection_id
         return context
     
