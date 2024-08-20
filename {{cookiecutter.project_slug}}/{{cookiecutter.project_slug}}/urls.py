@@ -4,6 +4,7 @@ from {{ cookiecutter.project_slug }}.views import (
     landing_page,
     transfer_page,
     CustomSearch,
+    TransferView,
 )
 
 from django.urls import path, include
@@ -19,7 +20,7 @@ urlpatterns = [
     path("", landing_page, name="landing-page"),
 
     #jo changes
-    path("transfers/", TransferListView.as_view(), name="transfer-page"),
+    path("transfers/", TransferView.as_view(), name="transfer-page"),
 
     
     path("<osn_index:index>", CustomSearch.as_view(), name="search"),
