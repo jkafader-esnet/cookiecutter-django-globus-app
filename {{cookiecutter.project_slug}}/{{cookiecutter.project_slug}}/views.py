@@ -15,10 +15,6 @@ def landing_page(request):
     context = {}
     return render(request, "globus-portal-framework/v2/landing-page.html", context)
 
-def transfer_page(request):
-    context = {}
-    return render(request, "globus-portal-framework/v2/components/transfer/list.html", context)
-
 
 class CustomSearch(SliderFacetsMixin, SearchView):
     """Search with Slider Facets enabled."""

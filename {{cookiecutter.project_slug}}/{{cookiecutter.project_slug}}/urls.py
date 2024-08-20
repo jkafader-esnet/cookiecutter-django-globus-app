@@ -18,10 +18,6 @@ urlpatterns = [
     path("api/", include(router.urls)),
     
     path("", landing_page, name="landing-page"),
-
-    #jo changes
-    path("transfers/", transfer_page, name="transfer-page"),
-
     
     path("<osn_index:index>", CustomSearch.as_view(), name="search"),
     path("transfer/", TransferListView.as_view(), name="transfer-list"),
