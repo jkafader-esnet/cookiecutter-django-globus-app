@@ -19,7 +19,7 @@ def landing_page(request):
 class TransferView(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context["collections"] = settings.COLLECTIONS
+        context["collections"] = settings.globus.collections
         return context
 
     template_name = "globus-portal-framework/v2/components/transfer/list.html"
