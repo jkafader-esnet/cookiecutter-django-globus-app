@@ -15,11 +15,14 @@ def landing_page(request):
     context = {}
     return render(request, "globus-portal-framework/v2/landing-page.html", context)
 
-def transfer_page(request):
-    context = {
-        'select_options': settings.globus.collections
-    }
-    return render(request, "globus-portal-framework/v2/components/transfer/list.html", context)
+
+class TransferView(TemplateView):
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["collections"] = settings.COLLECTIONS
+        return context
+
+    template_name = "globus-portal-framework/v2/components/transfer/list.html"
 
 
 class CustomSearch(SliderFacetsMixin, SearchView):
