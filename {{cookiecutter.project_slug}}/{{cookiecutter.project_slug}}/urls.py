@@ -1,7 +1,8 @@
 from api.urls import router
 
 from {{ cookiecutter.project_slug }}.views import (
-    landing_page, 
+    landing_page,
+    transfer_page 
     CustomSearch,
     TransferListView,
     TransferDetailView,
