@@ -74,19 +74,20 @@ const PortalEndpoint = (props) => {
     getPortalCollection(event.target.dataset.pathName);
   };
 
-  const handleItemSelect = (event) => {
-    if (event.target.checked) {
-      setSelectedPortalItems((selectedPortalItems) => {
-        return [JSON.parse(event.target.value), ...selectedPortalItems];
-      });
-    } else {
-      const removeItem = JSON.parse(event.target.value);
+  const handleItemSelect = (item) => {
+    const boolSelected = selectedPortalItems.some(listedItem => listedItem.name === item.name);
+
+    if (boolSelected) {
       let filtered = selectedPortalItems.filter((selectedPortalItem) => {
-        return selectedPortalItem.name != removeItem.name;
+        return selectedPortalItem.name != item.name;
       });
       setSelectedPortalItems(filtered);
-    }
-  };
+    } else {
+      setSelectedPortalItems((selectedPortalItems) => {
+        return [item, ...selectedPortalItems];
+      });
+    };
+
 
   const handleTransferToSearchEndpoint = async (event) => {
     event.preventDefault();
@@ -208,19 +209,19 @@ const PortalEndpoint = (props) => {
             return (
               <div key={`${item['last_modified']}-${item['name']}`} className='form-check' style={{display:'inline-block', margin:'10px'}}>
                 <div>
-                <span onClick={handleItemSelect} style= {{cursor:'pointer', display:'flex', alignItems:'center'}}>
+                <span key={item['name']} onClick={() => handleItemSelect(item)} style= {{cursor:'pointer', display:'flex', flexDirection:'right'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
                         onClick={handleDirectoryClick}
                         data-path-name={`${portalCollection.path}${item['name']}/`}>
                         <>
-                          <img src='../../../../images/folder.png' alt='folder' style={{}}></img>{item['name']}
+                          <img src='../../../../images/folder.png' alt='folder' style={{width:'20px', height:'20px'}}></img>{item['name']}
                         </>
                       </a>
                       ) : (
                         <>
-                          <img src='../../../../images/file.png' alt='folder' style={{}}></img>{item['name']}
+                          <img src='../../../../images/file.png' alt='file' style={{width:'20px', height:'20px'}}></img>{item['name']}
                         </>
                       )}
                 </span>
