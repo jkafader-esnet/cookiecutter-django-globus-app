@@ -244,7 +244,7 @@ const PortalEndpoint = (props) => {
         </ul>
       </div>
 
-      <div className='d-flex justify-content-end align-items-center'>
+      <div className='d-flex' style={{marginLeft: 'auto', marginRight: 'auto'}}>
         <button className='btn btn-sm btn-primary' onClick={handleTransferToSearchEndpoint}>
           Transfer to Search Endpoint <i className='fa-solid fa-arrow-right'></i>
         </button>

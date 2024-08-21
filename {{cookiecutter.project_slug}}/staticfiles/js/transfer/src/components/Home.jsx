@@ -61,9 +61,6 @@ const Home = (props) => {
   return (
     <div id='transfer-home' className='container-fluid mt-4'>
       <div className='row'>
-        <div className='col-10' style={{marginLeft: 'auto', marginRight: 'auto'}}>
-          <PortalEndpoint />
-        </div>
 
         <div className='col-10' style={{marginLeft: 'auto', marginRight: 'auto'}}>
           {/* 
@@ -101,6 +98,10 @@ const Home = (props) => {
             </div>
           )}
           {searchEndpoints['empty'] && <h5 className='mt-4'>Nothing found</h5>}
+        </div>
+
+        <div className='col-10' style={{marginLeft: 'auto', marginRight: 'auto'}}>
+          <PortalEndpoint />
         </div>
 
       </div>
