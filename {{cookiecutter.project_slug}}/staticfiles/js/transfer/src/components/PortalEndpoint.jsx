@@ -240,6 +240,20 @@ const PortalEndpoint = (props) => {
           Transfer to Search Endpoint <i className='fa-solid fa-arrow-right'></i>
         </button>
       </div>
+
+      <div>
+        <input
+        onChange={handleItemSelect}></input>
+
+        <h5>Transfer Queue</h5>
+        <ul>
+          {selectedPortalItems.map((portalItem, index) => (
+            <li key = {index}>portalItem['name']</li>
+          )) }
+        </ul>
+      </div>
+
+
     </div>
   );
 };
