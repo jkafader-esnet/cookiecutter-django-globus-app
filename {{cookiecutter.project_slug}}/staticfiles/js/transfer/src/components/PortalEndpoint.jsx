@@ -201,29 +201,29 @@ const PortalEndpoint = (props) => {
       <h5>Browsing Portal Source Node</h5>
 
       <div className='file-browser border mb-4 pb-4 pl-2 pt-2 rounded'>
-        <button className='btn btn-primary btn-sm mb-2' onClick={handleBackClick}>
+        <button className='btn btn-primary btn-sm mb-2' onClick={handleBackClick} style={{ display: 'block' }}>
           Back
         </button>
 
         {portalCollection && portalCollection['DATA'].length > 0 &&
           portalCollection['DATA'].map((item) => {
             return (
-              <div key={`${item['last_modified']}-${item['name']}`} className='form-check' style={{display:'inline-block', margin:'10px'}}>
+              <div key={`${item['last_modified']}-${item['name']}`} className='form-check' style={{display:'flex', flexWrap: 'wrap', justifyContent: 'flex-start'}}>
                 <div>
-                <span key={item['name']} onClick={() => handleItemSelect(item)} style= {{cursor:'pointer', display:'flex', flexDirection:'right'}}>
+                <span key={item['name']} onClick={() => handleItemSelect(item)} style= {{cursor:'pointer', display:'flex', flexDirection:'column'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
                         onClick={handleDirectoryClick}
                         data-path-name={`${portalCollection.path}${item['name']}/`}>
                         <>
-                          <img src='../../images/folder.png' alt='folder' style={{width:'20px', height:'20px'}}></img>
+                          <img src='../../static/folder.png' alt='folder' style={{width:'20px', height:'20px'}}></img>
                           {item['name']}
                         </>
                       </a>
                       ) : (
                         <>
-                          <img src='../../images/file.png' alt='file' style={{width:'20px', height:'20px'}}></img>
+                          <img src='../../static/file.png' alt='file' style={{width:'20px', height:'20px'}}></img>
                           {item['name']}
                         </>
                       )}
