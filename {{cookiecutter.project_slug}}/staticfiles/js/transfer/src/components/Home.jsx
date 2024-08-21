@@ -59,13 +59,13 @@ const Home = (props) => {
   }
 
   return (
-    <div id='transfer-home' className='container-fluid mt-4 justify-content-center'>
+    <div id='transfer-home' className='container-fluid mt-4'>
       <div className='row'>
-        <div className='col-8'>
+        <div className='col-8' style={{marginLeft: 'auto', marginRight: 'auto'}}>
           <PortalEndpoint />
         </div>
 
-        <div className='col-8 mb-4'>
+        <div className='col-8' style={{marginLeft: 'auto', marginRight: 'auto'}}>
           {/* 
             Endpoints will render here when the SearchEndpointLink is clicked below. 
             See App.jsx nested routing for more details. 
