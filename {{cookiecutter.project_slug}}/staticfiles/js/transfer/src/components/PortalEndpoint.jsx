@@ -235,7 +235,7 @@ const PortalEndpoint = (props) => {
           })}
       </div>
       
-      <h5> Transfer Queue</h5>
+      <h5>Transfer Queue</h5>
       <div className = 'border mb-4 pb-4 pl-2 pt-2 rounded'>
         <ul>
           {selectedPortalItems.map((portalItem, index) => (
@@ -244,9 +244,9 @@ const PortalEndpoint = (props) => {
         </ul>
       </div>
 
-      <div className='d-flex' style={{marginLeft: 'auto', marginRight: 'auto'}}>
+      <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
         <button className='btn btn-sm btn-primary' onClick={handleTransferToSearchEndpoint}>
-          Transfer to Search Endpoint <i className='fa-solid fa-arrow-right'></i>
+          Initiate Transfer <i className='fa-solid fa-arrow-right'></i>
         </button>
       </div>
 
