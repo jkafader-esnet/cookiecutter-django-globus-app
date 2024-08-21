@@ -59,7 +59,7 @@ const Home = (props) => {
   }
 
   return (
-    <div id='transfer-home' className='container-fluid mt-4 mb-8'>
+    <div id='transfer-home' className='container-fluid mt-4'>
       <div className='row'>
         <div className='col-10' style={{marginLeft: 'auto', marginRight: 'auto'}}>
           <PortalEndpoint />

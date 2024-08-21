@@ -196,7 +196,7 @@ const PortalEndpoint = (props) => {
         </div>
       )}
 
-      <h5>Browsing Portal Endpoint</h5>
+      <h5>Browsing Portal Source Node</h5>
 
       <div className='file-browser border mb-4 pb-4 pl-2 pt-2 rounded'>
         <button className='btn btn-primary btn-sm mb-2' onClick={handleBackClick}>
@@ -239,7 +239,7 @@ const PortalEndpoint = (props) => {
       <div className = 'border mb-4 pb-4 pl-2 pt-2 rounded'>
         <ul>
           {selectedPortalItems.map((portalItem, index) => (
-            <li key = {index}>portalItem.name</li>
+            <li key = {index}> {portalItem['name'] }</li>
           )) }
         </ul>
       </div>
