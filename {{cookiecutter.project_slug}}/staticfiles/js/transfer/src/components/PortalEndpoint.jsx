@@ -217,12 +217,14 @@ const PortalEndpoint = (props) => {
                         onClick={handleDirectoryClick}
                         data-path-name={`${portalCollection.path}${item['name']}/`}>
                         <>
-                          <img src='../../../../images/folder.png' alt='folder' style={{width:'20px', height:'20px'}}></img>{item['name']}
+                          <img src='../../images/folder.png' alt='folder' style={{width:'20px', height:'20px'}}></img>
+                          {item['name']}
                         </>
                       </a>
                       ) : (
                         <>
-                          <img src='../../../../images/file.png' alt='file' style={{width:'20px', height:'20px'}}></img>{item['name']}
+                          <img src='../../images/file.png' alt='file' style={{width:'20px', height:'20px'}}></img>
+                          {item['name']}
                         </>
                       )}
                 </span>
@@ -245,7 +247,7 @@ const PortalEndpoint = (props) => {
         </ul>
       </div>
 
-      <div style={{marginLeft: '50%', marginRight: '50%'}}>
+      <div style={{textAlign: 'center'}}>
         <button className='btn btn-primary' onClick={handleTransferToSearchEndpoint}>
           Initiate Transfer <i className='fa-solid fa-arrow-right'></i>
         </button>
