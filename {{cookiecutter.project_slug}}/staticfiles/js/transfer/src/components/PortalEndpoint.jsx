@@ -171,7 +171,7 @@ const PortalEndpoint = (props) => {
   }
 
   return (
-    <div className='mb-4'>
+    <div className='mb-8'>
       
       {error && (
         <div className='alert alert-danger'>
