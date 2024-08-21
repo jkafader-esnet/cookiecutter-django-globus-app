@@ -202,33 +202,28 @@ const PortalEndpoint = (props) => {
         <button className='btn btn-primary btn-sm mb-2' onClick={handleBackClick}>
           Back
         </button>
+
         {portalCollection && portalCollection['DATA'].length > 0 &&
           portalCollection['DATA'].map((item) => {
             return (
-              <div key={`${item['last_modified']}-${item['name']}`} className='form-check'>
+              <div key={`${item['last_modified']}-${item['name']}`} className='form-check' style={{display:'inline-block', margin:'10px'}}>
                 <div>
-                  <input
-                    className='form-check-input'
-                    type='checkbox'
-                    value={JSON.stringify(item)}
-                    data-list-item-name={item['name']}
-                    onChange={handleItemSelect}></input>
-                  <label>
+                <span onClick={handleItemSelect} style= {{cursor:'pointer', display:'flex', alignItems:'center'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
                         onClick={handleDirectoryClick}
                         data-path-name={`${portalCollection.path}${item['name']}/`}>
                         <>
-                          <i className='fa-solid fa-folder-open'></i> {item['name']}
+                          <img src='../../../../images/folder.png' alt='folder' style={{}}></img>{item['name']}
                         </>
                       </a>
-                    ) : (
-                      <>
-                        <i className='fa-solid fa-file'></i> {item['name']}
-                      </>
-                    )}
-                  </label>
+                      ) : (
+                        <>
+                          <img src='../../../../images/file.png' alt='folder' style={{}}></img>{item['name']}
+                        </>
+                      )}
+                </span>
                 </div>
               </div>
             );
