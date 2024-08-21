@@ -238,14 +238,18 @@ const PortalEndpoint = (props) => {
       <h5>Transfer Queue</h5>
       <div className = 'border mb-4 pb-4 pl-2 pt-2 rounded'>
         <ul>
-          {selectedPortalItems.map((portalItem, index) => (
+        {selectedPortalItems.length > 0 ? (
+          selectedPortalItems.map((portalItem, index) => (
             <li key = {index}> {portalItem['name'] }</li>
-          )) }
+          ))
+          ) : (
+          <p>No items available to display</p>
+          )}
         </ul>
       </div>
 
-      <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
-        <button className='btn btn-sm btn-primary' onClick={handleTransferToSearchEndpoint}>
+      <div style={{marginLeft: '50%', marginRight: '50%'}}>
+        <button className='btn btn-primary' onClick={handleTransferToSearchEndpoint}>
           Initiate Transfer <i className='fa-solid fa-arrow-right'></i>
         </button>
       </div>
