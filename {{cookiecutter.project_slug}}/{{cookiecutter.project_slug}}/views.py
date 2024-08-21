@@ -20,7 +20,11 @@ class TransferView(TemplateView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["collections"] = settings.COLLECTIONS
-        context["collection_id"] = collection_id
+
+        collection_id = kwargs.get('collection_id')
+        if collection_id is not None:
+            context["collection_id"] = collection_id
+            
         return context
 
     template_name = "globus-portal-framework/v2/components/transfer/list.html"
