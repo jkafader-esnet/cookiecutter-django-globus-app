@@ -235,8 +235,8 @@ const PortalEndpoint = (props) => {
           })}
       </div>
 
-      <div>
-        <h5 className = 'border mb-4 pb-4 pl-2 pt-2 rounded'> Transfer Queue</h5>
+      <div className = 'border mb-4 pb-4 pl-2 pt-2 rounded'>
+        <h5> Transfer Queue</h5>
         <ul>
           {selectedPortalItems.map((portalItem, index) => (
             <li key = {index}>portalItem.name</li>
