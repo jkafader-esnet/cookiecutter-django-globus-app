@@ -86,7 +86,8 @@ const PortalEndpoint = (props) => {
       setSelectedPortalItems((selectedPortalItems) => {
         return [item, ...selectedPortalItems];
       });
-    };
+    }
+  };
 
 
   const handleTransferToSearchEndpoint = async (event) => {
