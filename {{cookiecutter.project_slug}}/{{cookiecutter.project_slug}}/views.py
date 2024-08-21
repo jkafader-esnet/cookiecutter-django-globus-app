@@ -24,7 +24,7 @@ class TransferView(TemplateView):
         collection_id = kwargs.get('collection_id')
         if collection_id is not None:
             context["collection_id"] = collection_id
-            
+
         return context
 
     template_name = "globus-portal-framework/v2/components/transfer/list.html"
