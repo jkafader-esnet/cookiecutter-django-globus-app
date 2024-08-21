@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import PortalEndpoint from './PortalEndpoint.jsx';
+import { handleTransferToSearchEndpoint , PortalEndpoint } from './PortalEndpoint.jsx';
 import SearchEndpointLink from './SearchEndpointLink.jsx';
 
 const Home = (props) => {
@@ -102,8 +102,16 @@ const Home = (props) => {
           )}
           {searchEndpoints['empty'] && <h5 className='mt-4'>Nothing found</h5>}
         </div>
+
+        <div className='d-flex justify-content-end'>
+        <button className='btn btn-sm btn-primary' onClick={handleTransferToSearchEndpoint}>
+          Transfer to Search Endpoint <i className='fa-solid fa-arrow-right'></i>
+        </button>
+        </div>
+
       </div>
     </div>
+
   );
 };
 

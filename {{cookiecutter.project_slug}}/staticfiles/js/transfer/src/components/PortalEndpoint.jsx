@@ -235,12 +235,6 @@ const PortalEndpoint = (props) => {
           })}
       </div>
 
-      <div className='d-flex justify-content-end'>
-        <button className='btn btn-sm btn-primary' onClick={handleTransferToSearchEndpoint}>
-          Transfer to Search Endpoint <i className='fa-solid fa-arrow-right'></i>
-        </button>
-      </div>
-
       <div>
         <h5>Transfer Queue</h5>
         <ul>
@@ -250,9 +244,15 @@ const PortalEndpoint = (props) => {
         </ul>
       </div>
 
+      <div className='d-flex justify-content-end'>
+        <button className='btn btn-sm btn-primary' onClick={handleTransferToSearchEndpoint}>
+          Transfer to Search Endpoint <i className='fa-solid fa-arrow-right'></i>
+        </button>
+      </div>
+
 
     </div>
   );
 };
 
-export default PortalEndpoint;
+export default { handleTransferToSearchEndpoint , PortalEndpoint };
