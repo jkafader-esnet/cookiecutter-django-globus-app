@@ -242,13 +242,10 @@ const PortalEndpoint = (props) => {
       </div>
 
       <div>
-        <input
-        onChange={handleItemSelect}></input>
-
         <h5>Transfer Queue</h5>
         <ul>
           {selectedPortalItems.map((portalItem, index) => (
-            <li key = {index}>portalItem['name']</li>
+            <li key = {index}>portalItem.name</li>
           )) }
         </ul>
       </div>
