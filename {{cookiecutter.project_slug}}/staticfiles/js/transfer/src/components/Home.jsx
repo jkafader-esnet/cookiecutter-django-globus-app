@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import React, { useState } from 'react';
 
-import { handleTransferToSearchEndpoint , PortalEndpoint } from './PortalEndpoint.jsx';
+import PortalEndpoint from './PortalEndpoint.jsx';
 import SearchEndpointLink from './SearchEndpointLink.jsx';
 
 const Home = (props) => {

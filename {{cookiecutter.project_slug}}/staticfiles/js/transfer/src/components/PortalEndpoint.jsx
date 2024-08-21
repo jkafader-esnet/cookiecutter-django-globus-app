@@ -255,4 +255,4 @@ const PortalEndpoint = (props) => {
   );
 };
 
-export default { handleTransferToSearchEndpoint , PortalEndpoint };
+export default PortalEndpoint;
