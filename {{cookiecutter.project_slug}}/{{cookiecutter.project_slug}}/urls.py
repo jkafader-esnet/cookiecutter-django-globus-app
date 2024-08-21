@@ -20,6 +20,7 @@ urlpatterns = [
 
     #jo changes
     path("transfers/", TransferView.as_view(), name="transfer-page"),
+    path("transfers/<collection_id>/", TransferView.as_view(), name="transfer-detail"),
 
     
     path("<osn_index:index>", CustomSearch.as_view(), name="search"),
