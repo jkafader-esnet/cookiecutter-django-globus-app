@@ -210,7 +210,7 @@ const PortalEndpoint = (props) => {
             return (
               <div key={`${item['last_modified']}-${item['name']}`} className='form-check' style={{display:'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px', maxWidth: '800px', margin: '0 auto'}}>
                 <div>
-                <span key={item['name']} onClick={() => handleItemSelect(item)} style= {{cursor:'pointer', padding: '20px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <span key={item['name']} onClick={() => handleItemSelect(item)} style= {{cursor:'pointer', padding: '20px', textAlign: 'center', display: 'flex', alignItems: 'center'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
