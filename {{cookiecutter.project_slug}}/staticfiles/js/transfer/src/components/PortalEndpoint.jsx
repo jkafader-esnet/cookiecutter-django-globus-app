@@ -208,22 +208,22 @@ const PortalEndpoint = (props) => {
         {portalCollection && portalCollection['DATA'].length > 0 &&
           portalCollection['DATA'].map((item) => {
             return (
-              <div key={`${item['last_modified']}-${item['name']}`} className='form-check' style={{display:'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px'}}>
+              <div key={`${item['last_modified']}-${item['name']}`} className='form-check'>
                 <div>
-                <span key={item['name']} onClick={() => handleItemSelect(item)} style= {{cursor:'pointer', padding: '20px', textAlign: 'center'}}>
+                <span key={item['name']} onClick={() => handleItemSelect(item)} style= {{cursor:'pointer', display:'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px', textAlign: 'center'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
-                        onClick={handleDirectoryClick}
+                        onDoubleClick={handleDirectoryClick}
                         data-path-name={`${portalCollection.path}${item['name']}/`}>
                         <>
-                          <img src='../../static/folder.png' alt='folder' style={{width:'60px'}}></img>
+                          <img src='../../static/folder.png' alt='folder' style={{height:'70px'}}></img>
                           {item['name']}
                         </>
                       </a>
                       ) : (
                         <>
-                          <img src='../../static/file.png' alt='file' style={{width:'60px'}}></img>
+                          <img src='../../static/file.png' alt='file' style={{width:'70px'}}></img>
                           {item['name']}
                         </>
                       )}
