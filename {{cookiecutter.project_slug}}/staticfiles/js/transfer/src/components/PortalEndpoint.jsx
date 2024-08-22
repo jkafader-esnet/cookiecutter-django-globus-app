@@ -218,14 +218,19 @@ const PortalEndpoint = (props) => {
                         data-path-name={`${portalCollection.path}${item['name']}/`}>
                         <>
                           <img src='../../static/folder.png' alt='folder' style={{width:'60px'}}></img>
-                          {item['name']}
+                          <p>{item['name']}</p>
                         </>
                       </a>
                       ) : (
-                      <a onClick={() => handleItemSelect(item)}> 
+                      <a 
+                        onClick={() => handleItemSelect(item)}
+                        style={{ 
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center'}}> 
                         <>
                           <img src='../../static/file.png' alt='file' style={{width:'60px'}}></img>
-                          {item['name']}
+                          <p>{item['name']}</p>
                         </>
                       </a> 
                       )}
