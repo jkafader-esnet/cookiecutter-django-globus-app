@@ -210,22 +210,24 @@ const PortalEndpoint = (props) => {
             return (
               <div key={`${item['last_modified']}-${item['name']}`} className='form-check'>
                 <div>
-                <span key={item['name']} onClick={() => handleItemSelect(item)} style= {{cursor:'pointer', display:'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '10px', textAlign: 'center'}}>
+                <span key={item['name']} style= {{cursor:'pointer'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
-                        onDoubleClick={handleDirectoryClick}
+                        onClick={handleDirectoryClick}
                         data-path-name={`${portalCollection.path}${item['name']}/`}>
                         <>
-                          <img src='../../static/folder.png' alt='folder' style={{height:'70px'}}></img>
+                          <img src='../../static/folder.png' alt='folder' style={{width:'60px'}}></img>
                           {item['name']}
                         </>
                       </a>
                       ) : (
+                      <a onClick={() => handleItemSelect(item)}> 
                         <>
-                          <img src='../../static/file.png' alt='file' style={{width:'70px'}}></img>
+                          <img src='../../static/file.png' alt='file' style={{width:'60px'}}></img>
                           {item['name']}
                         </>
+                      </a> 
                       )}
                 </span>
                 </div>
