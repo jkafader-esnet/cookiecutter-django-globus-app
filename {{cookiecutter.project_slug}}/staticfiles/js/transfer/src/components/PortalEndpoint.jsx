@@ -208,9 +208,8 @@ const PortalEndpoint = (props) => {
         {portalCollection && portalCollection['DATA'].length > 0 &&
           portalCollection['DATA'].map((item) => {
             return (
-              <div key={`${item['last_modified']}-${item['name']}`}>
-                <div>
-                <div key={item['name']} style= {{cursor:'pointer', flex: '0 0 25%', display:'flex', padding: '8px'}}>
+              <div key={`${item['last_modified']}-${item['name']}`} style= {{flex: '0 0 25%', padding: '8px', boxSizing: 'border-box'}}>
+                <div style= {{cursor:'pointer', display:'flex', flexDirection: 'column', alignItems: 'center'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
@@ -226,7 +225,6 @@ const PortalEndpoint = (props) => {
                           <p>{item['name']}</p>
                       </a> 
                       )}
-                </div>
                 </div>
               </div>
             );
