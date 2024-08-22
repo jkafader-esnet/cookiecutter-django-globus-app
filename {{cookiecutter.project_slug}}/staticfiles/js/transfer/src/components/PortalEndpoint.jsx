@@ -210,7 +210,7 @@ const PortalEndpoint = (props) => {
             return (
               <div key={`${item['last_modified']}-${item['name']}`}>
                 <div>
-                <span key={item['name']} style= {{cursor:'pointer', flex: '0 0 25%', display:'flex'}}>
+                <div key={item['name']} style= {{cursor:'pointer', flex: '0 0 25%', display:'flex', padding: '8px'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
@@ -230,7 +230,7 @@ const PortalEndpoint = (props) => {
                         </>
                       </a> 
                       )}
-                </span>
+                </div>
                 </div>
               </div>
             );
