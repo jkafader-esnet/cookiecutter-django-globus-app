@@ -216,18 +216,14 @@ const PortalEndpoint = (props) => {
                         href='#'
                         onClick={handleDirectoryClick}
                         data-path-name={`${portalCollection.path}${item['name']}/`}>
-                        <>
                           <img src='../../static/folder.png' alt='folder' style={{width:'60px'}}></img>
                           <p>{item['name']}</p>
-                        </>
                       </a>
                       ) : (
                       <a 
                         onClick={() => handleItemSelect(item)}> 
-                        <>
                           <img src='../../static/file.png' alt='file' style={{width:'60px'}}></img>
                           <p>{item['name']}</p>
-                        </>
                       </a> 
                       )}
                 </div>
