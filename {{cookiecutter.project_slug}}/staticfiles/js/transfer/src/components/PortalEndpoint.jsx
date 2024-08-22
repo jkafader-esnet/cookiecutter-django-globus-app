@@ -208,9 +208,9 @@ const PortalEndpoint = (props) => {
         {portalCollection && portalCollection['DATA'].length > 0 &&
           portalCollection['DATA'].map((item) => {
             return (
-              <div key={`${item['last_modified']}-${item['name']}`} className='form-check'>
+              <div key={`${item['last_modified']}-${item['name']}`}>
                 <div>
-                <span key={item['name']} className = 'icon-grid' style= {{cursor:'pointer'}}>
+                <span key={item['name']} style= {{cursor:'pointer', flex: '0 0 25%', display:'flex'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
