@@ -201,14 +201,18 @@ const PortalEndpoint = (props) => {
       <h5>Browsing Portal Source Node</h5>
 
       <div className='file-browser border mb-4 pb-4 pl-2 pt-2 rounded'>
+        <div className = 'row'>
+        
+        <div className = 'col 10'>
         <button className='btn btn-primary btn-sm mb-2' onClick={handleBackClick}>
           Back
         </button>
+        </div>
 
         {portalCollection && portalCollection['DATA'].length > 0 &&
           portalCollection['DATA'].map((item) => {
             return (
-              <div key={`${item['last_modified']}-${item['name']}`} className = 'row'>
+              <div key={`${item['last_modified']}-${item['name']}`}>
                 <div className = 'col-2' style= {{cursor:'pointer'}}>
                     {item['type'] == 'dir' ? (
                       <a
@@ -229,6 +233,7 @@ const PortalEndpoint = (props) => {
               </div>
             );
           })}
+          </div>
       </div>
       
       <h5>Transfer Queue</h5>
