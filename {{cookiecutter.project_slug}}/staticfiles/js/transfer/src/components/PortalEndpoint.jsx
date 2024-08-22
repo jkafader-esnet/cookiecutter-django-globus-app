@@ -210,7 +210,7 @@ const PortalEndpoint = (props) => {
             return (
               <div key={`${item['last_modified']}-${item['name']}`} className='form-check'>
                 <div>
-                <span key={item['name']} style= {{cursor:'pointer'}}>
+                <span key={item['name']} className = 'icon-grid' style= {{cursor:'pointer'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
@@ -223,11 +223,7 @@ const PortalEndpoint = (props) => {
                       </a>
                       ) : (
                       <a 
-                        onClick={() => handleItemSelect(item)}
-                        style={{ 
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center'}}> 
+                        onClick={() => handleItemSelect(item)}> 
                         <>
                           <img src='../../static/file.png' alt='file' style={{width:'60px'}}></img>
                           <p>{item['name']}</p>
