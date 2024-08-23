@@ -25,8 +25,8 @@ class TransferView(TemplateView):
         if collection_id is not None:
             context["collection_id"] = collection_id
             for collection in context["collections"]:
-                if collection_id == collection[id]:
-                    context["collection_name"] = collection[name]
+                if collection_id == collection['id']:
+                    context["collection_name"] = collection['name']
 
         return context
 
