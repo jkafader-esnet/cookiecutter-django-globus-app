@@ -247,7 +247,7 @@ const PortalEndpoint = (props) => {
         </ul>
       </div>
 
-      <div style={{textAlign: 'center'}}>
+      <div style={{textAlign: 'center', marginBottom: '100px'}}>
         <button className='btn btn-primary' onClick={handleTransferToSearchEndpoint}>
           Initiate Transfer <i className='fa-solid fa-arrow-right'></i>
         </button>
