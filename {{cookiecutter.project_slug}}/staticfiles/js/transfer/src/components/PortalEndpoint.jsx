@@ -212,7 +212,7 @@ const PortalEndpoint = (props) => {
         {portalCollection && portalCollection['DATA'].length > 0 &&
           portalCollection['DATA'].map((item) => {
             return (
-              <div key={`${item['last_modified']}-${item['name']}`} className = 'col-3' style= {{cursor:'pointer'}}>
+              <div key={`${item['last_modified']}-${item['name']}`} className = 'col-3' style= {{cursor:'pointer', textAlign: 'center', alignItems: 'center'}}>
                     {item['type'] == 'dir' ? (
                       <a
                         href='#'
