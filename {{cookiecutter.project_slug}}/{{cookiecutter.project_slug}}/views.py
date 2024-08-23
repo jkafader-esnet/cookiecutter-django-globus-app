@@ -24,6 +24,9 @@ class TransferView(TemplateView):
         collection_id = kwargs.get('collection_id')
         if collection_id is not None:
             context["collection_id"] = collection_id
+            for collection in context["collections"]:
+                if collection_id == collection.name:
+                    context["collection_name"] = collection.name
 
         return context
 
