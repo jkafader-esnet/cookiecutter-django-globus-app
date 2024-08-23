@@ -203,7 +203,7 @@ const PortalEndpoint = (props) => {
       <div className='file-browser border mb-4 pb-4 pl-2 pt-2 rounded'>
         <div className = 'row'>
         
-        <div className = 'col-10'>
+        <div className = 'col-12'>
         <button className='btn btn-primary btn-sm mb-2' onClick={handleBackClick}>
           Back
         </button>
@@ -218,13 +218,13 @@ const PortalEndpoint = (props) => {
                         href='#'
                         onClick={handleDirectoryClick}
                         data-path-name={`${portalCollection.path}${item['name']}/`}>
-                          <img src='../../static/folder.png' alt='folder' style={{marginTop: '30%', marginBottom: 'auto', height:'60px'}}></img>
+                          <img src='../../static/folder.png' alt='folder' style={{marginTop: '20px', height:'60px'}}></img>
                           <p>{item['name']}</p>
                       </a>
                       ) : (
                       <a 
                         onClick={() => handleItemSelect(item)}> 
-                          <img src='../../static/file.png' alt='file' style={{marginTop: '30%', marginBottom: 'auto', width:'60px'}}></img>
+                          <img src='../../static/file.png' alt='file' style={{marginTop: '20px', width:'60px'}}></img>
                           <p>{item['name']}</p>
                       </a> 
                       )}
