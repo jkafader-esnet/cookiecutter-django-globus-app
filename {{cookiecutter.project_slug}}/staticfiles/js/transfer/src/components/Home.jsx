@@ -66,7 +66,7 @@ const Home = (props) => {
             Endpoints will render here when the SearchEndpointLink is clicked below. 
             See App.jsx nested routing for more details. 
           */}
-          
+          <Outlet />
 
           <h5>Destination Node</h5>
           <input
