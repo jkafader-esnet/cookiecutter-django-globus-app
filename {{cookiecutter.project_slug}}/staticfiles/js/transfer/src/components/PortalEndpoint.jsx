@@ -164,7 +164,8 @@ const PortalEndpoint = (props) => {
       <div className='alert alert-danger'>
         <strong>Error {error['status_code']}: </strong>
         {error['message']} Please try <a className='alert-link' href='/login/globus'>logging in with Globus</a>.
-       </div>
+      </div>
+    
     )
   }
 
