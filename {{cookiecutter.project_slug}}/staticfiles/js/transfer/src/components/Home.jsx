@@ -69,7 +69,7 @@ const Home = (props) => {
             className='form-control'
             placeholder='Search'
             type='text'
-            value={searchEndpoint['display_name'] || endpointSearchText}
+            value={searchEndpoints['display_name'] || endpointSearchText}
             onChange={handleEndpointSearchTextChange}
             onKeyDown={handleSearchEndpoints}
           />
