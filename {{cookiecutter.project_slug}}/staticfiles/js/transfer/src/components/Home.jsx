@@ -67,9 +67,9 @@ const Home = (props) => {
           <input
             id='endpoint-input'
             className='form-control'
-            placeholder='Start typing and hit enter'
+            placeholder='Search'
             type='text'
-            value={endpointSearchText}
+            value={searchEndpoints || endpointSearchText}
             onChange={handleEndpointSearchTextChange}
             onKeyDown={handleSearchEndpoints}
           />
