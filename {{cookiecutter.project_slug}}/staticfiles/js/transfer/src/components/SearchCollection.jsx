@@ -64,47 +64,7 @@ const SearchCollection = (props) => {
   }
 
   return (
-    <>
-      <h5>Browsing Endpoint {searchEndpoint && searchEndpoint['display_name']}</h5>
-      <div className='file-browser border mb-4 pb-4 pl-2 pt-2 rounded'>
-        <div key={props['endpointID']} id='collection'>
-          <button className='btn btn-primary btn-sm mb-2' onClick={() => navigate(-1)}>
-            Back
-          </button>
-          {searchCollection.length > 0 ? (
-            searchCollection['DATA'].map((item) => {
-              return (
-                <div key={`${item['last_modified']}-${item['name']}`} className='form-check'>
-                  <input
-                    className='form-check-input'
-                    type='checkbox'
-                    value={JSON.stringify(item)}
-                    data-list-item-name={item['name']}
-                    onChange={handleItemSelect}></input>
-                  <label>
-                    {item['type'] == 'dir' ? (
-                      <Link
-                        to={{
-                          pathname: `/${props['endpointID']}/${item['name']}/`,
-                          search: `?absolutePath=${searchCollection['path']}`,
-                        }}>
-                        <i className='fa-solid fa-folder-open'></i> {item['name']}
-                      </Link>
-                    ) : (
-                      <>
-                        <i className='fa-solid fa-file'></i> {item['name']}
-                      </>
-                    )}
-                  </label>
-                </div>
-              );
-            })
-          ) : (
-            <p><i>Empty directory</i></p>
-          )}
-        </div>
-      </div>
-    </>
+    <div></div>
   );
 };
 

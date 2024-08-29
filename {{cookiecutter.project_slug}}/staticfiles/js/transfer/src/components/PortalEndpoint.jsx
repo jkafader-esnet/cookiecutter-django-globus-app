@@ -218,7 +218,12 @@ const PortalEndpoint = (props) => {
                       <a
                         href='#'
                         onClick={handleDirectoryClick}
-                        data-path-name={`${portalCollection.path}${item['name']}/`}>
+                        data-path-name={`${portalCollection.path}${item['name']}/`}
+                        to={{
+                          pathname: `/${props['endpointID']}/${item['name']}/`,
+                          search: `?absolutePath=${searchCollection['path']}`,
+                        }}>
+                        
                           <img src='../../static/folder.png' alt='folder' style={{marginTop: '20px', height:'60px'}}></img>
                           <p>{item['name']}</p>
                       </a>
