@@ -62,10 +62,6 @@ const Home = (props) => {
     <div id='transfer-home' className='container-fluid mt-4'>
       <div className='row'>
         <div className='col-10 mb-4' style={{marginLeft: 'auto', marginRight: 'auto'}}>
-
-        <div className='col-10' style={{marginLeft: 'auto', marginRight: 'auto'}}>
-          <PortalEndpoint />
-        </div>
           
           <h5>Destination Node</h5>
           <input
@@ -102,6 +98,10 @@ const Home = (props) => {
             </div>
           )}
           {searchEndpoints['empty'] && <h5 className='mt-4'>Nothing found</h5>}
+        </div>
+
+        <div className='col-10' style={{marginLeft: 'auto', marginRight: 'auto'}}>
+          <PortalEndpoint />
         </div>
 
       </div>
