@@ -64,15 +64,14 @@ const Home = (props) => {
           <h5>Destination Node</h5>
           <form action='#' onSubmit={doSearch} className='row'>
             <input
-              className='col-10'
               id='endpoint-input'
-              className='form-control'
+              className='form-control col-10'
               placeholder='Search'
               type='text'
               value={searchEndpoints['display_name'] || endpointSearchText}
               onChange={handleEndpointSearchTextChange}
             />
-            <button className='col-2'>Search</button>
+            <button id='endpoint-search-button' className='col-2'>Search</button>
           </form>
 
           {/* 
