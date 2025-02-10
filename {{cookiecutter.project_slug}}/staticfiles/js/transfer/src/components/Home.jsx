@@ -58,20 +58,20 @@ const Home = (props) => {
 
   return (
     <div id='transfer-home' className='container-fluid mt-4'>
-      <div className='row'>
+      <div className='row px-3'>
         <div className='col-10 mb-4' style={{marginLeft: 'auto', marginRight: 'auto'}}>
           
           <h5>Destination Node</h5>
           <form action='#' onSubmit={doSearch} className='row'>
             <input
               id='endpoint-input'
-              className='form-control col-10'
+              className='form-control col-10 rounded-left'
               placeholder='Search'
               type='text'
               value={searchEndpoints['display_name'] || endpointSearchText}
               onChange={handleEndpointSearchTextChange}
             />
-            <button id='endpoint-search-button' className='col-2'>Search</button>
+            <button id='endpoint-search-button' className='col-2 rounded-right'>Search</button>
           </form>
 
           {/* 
