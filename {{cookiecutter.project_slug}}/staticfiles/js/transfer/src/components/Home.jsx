@@ -62,7 +62,7 @@ const Home = (props) => {
         <div className='col-10 mb-4' style={{marginLeft: 'auto', marginRight: 'auto'}}>
           
           <h5>Destination Node</h5>
-          <form action='#' onSubmit="{doSearch}" className='row'>
+          <form action='#' onSubmit={doSearch} className='row'>
             <input
               className='col-10'
               id='endpoint-input'
