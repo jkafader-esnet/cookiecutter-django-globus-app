@@ -20,34 +20,32 @@ const Home = (props) => {
     setEndpointSearchText(event.currentTarget.value);
   };
 
-  const handleSearchEndpoints = async (event) => {
-    let keyCode = event.keyCode;
-    if (keyCode == 13) {
-      setSearchEndpoints([]);
-      setLoading(true);
-      let endpointsSearchURL = `/api/endpoints?filter_fulltext=${endpointSearchText}`;
-      try {
-        let response = await fetch(endpointsSearchURL, {
-          headers: {
-            Allow: 'application/data',
-            'Content-Type': 'application/data',
-          },
-        });
-        var searchEndpoints = await response.json();
-        if ('code' in searchEndpoints) {
-          throw searchEndpoints;
-        }
-      } catch (error) {
-        setError(error);
+  const doSearch = async(event)=>{
+    event.preventDefault();
+    setSearchEndpoints([]);
+    setLoading(true);
+    let endpointsSearchURL = `/api/endpoints?filter_fulltext=${endpointSearchText}`;
+    try {
+      let response = await fetch(endpointsSearchURL, {
+        headers: {
+          Allow: 'application/data',
+          'Content-Type': 'application/data',
+        },
+      });
+      var searchEndpoints = await response.json();
+      if ('code' in searchEndpoints) {
+        throw searchEndpoints;
       }
-      if (searchEndpoints.length > 0) {
-        setSearchEndpoints(searchEndpoints);
-      } else {
-        setSearchEndpoints({ empty: true });
-      }
-      setLoading(false);
+    } catch (error) {
+      setError(error);
     }
-  };
+    if (searchEndpoints.length > 0) {
+      setSearchEndpoints(searchEndpoints);
+    } else {
+      setSearchEndpoints({ empty: true });
+    }
+    setLoading(false);
+  }
 
   if (error) {
     return (
@@ -64,15 +62,18 @@ const Home = (props) => {
         <div className='col-10 mb-4' style={{marginLeft: 'auto', marginRight: 'auto'}}>
           
           <h5>Destination Node</h5>
-          <input
-            id='endpoint-input'
-            className='form-control'
-            placeholder='Search'
-            type='text'
-            value={searchEndpoints['display_name'] || endpointSearchText}
-            onChange={handleEndpointSearchTextChange}
-            onKeyDown={handleSearchEndpoints}
-          />
+          <form action='#' onSubmit="{doSearch}" className='row'>
+            <input
+              className='col-10'
+              id='endpoint-input'
+              className='form-control'
+              placeholder='Search'
+              type='text'
+              value={searchEndpoints['display_name'] || endpointSearchText}
+              onChange={handleEndpointSearchTextChange}
+            />
+            <button className='col-2'>Search</button>
+          </form>
 
           {/* 
             Endpoints will render here when the SearchEndpointLink is clicked below. 
