@@ -68,14 +68,14 @@ const Home = (props) => {
               className='form-control col-10 rounded-left'
               placeholder='Search'
               type='text'
-              style={ borderBottomRightRadius: 0, borderTopRightRadius: 0, borderRight:0 }
+              style={{ borderBottomRightRadius: 0, borderTopRightRadius: 0, borderRight:0 }}
               value={searchEndpoints['display_name'] || endpointSearchText}
               onChange={handleEndpointSearchTextChange}
             />
             <button
               id='endpoint-search-button'
               className='col-2 rounded-right'
-              style={borderWidth:"1px", borderColor:"#BBB", borderStyle:"solid" }
+              style={{borderWidth:"1px", borderColor:"#BBB", borderStyle:"solid" }}
             >Search</button>
           </form>
 
