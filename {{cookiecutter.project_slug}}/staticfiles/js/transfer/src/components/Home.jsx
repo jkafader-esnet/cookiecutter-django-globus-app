@@ -104,6 +104,11 @@ const Home = (props) => {
           )}
           {searchEndpoints['empty'] && <h5 className='mt-4'>Nothing found</h5>}
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
 
         <div className='col-10' style={{marginLeft: 'auto', marginRight: 'auto'}}>
           <PortalEndpoint />
