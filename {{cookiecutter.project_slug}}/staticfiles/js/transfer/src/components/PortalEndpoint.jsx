@@ -199,6 +199,9 @@ const PortalEndpoint = (props) => {
         </div>
       )}
 
+      <br/>
+      <br/>
+      <br/>
       <h5>Browsing Portal Source Node</h5>
 
       <div className='file-browser border mb-4 pb-4 pl-2 pt-2 rounded'>
