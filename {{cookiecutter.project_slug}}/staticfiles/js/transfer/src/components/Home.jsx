@@ -107,8 +107,6 @@ const Home = (props) => {
         <br/>
         <br/>
         <br/>
-        <br/>
-        <br/>
 
         <div className='col-10' style={{marginLeft: 'auto', marginRight: 'auto'}}>
           <PortalEndpoint />
